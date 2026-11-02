@@ -25,8 +25,8 @@ window.SITE = {
 window.HERO = {
   id: "teaser-01",
   label: "TEASER 01",
-  src: "assets/video/teaser1.mp4",
-  poster: "assets/img/teaser1-poster.webp"
+  src: "assets/video/teaser1.mp4?v=10",
+  poster: "assets/img/teaser1-poster.webp?v=10"
 };
 
 /* 2026 홍보물 — 공개일(releaseAt) 최신순으로 자동 정렬 */
