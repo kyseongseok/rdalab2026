@@ -36,7 +36,7 @@ window.PROMOS = [
     kind: "video",
     orient: "portrait",
     tag: "TEASER 02",
-    title: "연정국 lite — NOT DEBUT",
+    title: "연정국 lite — HOT DEBUT",
     desc: "연구정책국 연구제도팀이 준비한 두 번째 티저.",
     src: "assets/video/teaser2.mp4",
     thumb: "assets/img/teaser2-poster.webp",
