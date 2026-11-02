@@ -119,7 +119,7 @@ window.ARCHIVE = [
     ratio: "1 / 1",
     links: {
       4: [{ label: "홍승범 실장님 콘테스트 후기 보기", href: "https://brunch.co.kr/@seungbeomhong/71" }],
-      7: [{ label: "이 페이지에서 발표자료 보기", action: "filter:slides" }]
+      7: [{ label: "이 페이지에서 발표자료 보기", action: "goto:slides" }]
     }
   },
   {
@@ -133,7 +133,7 @@ window.ARCHIVE = [
     pages: Array.from({ length: 10 }, (_, i) => `assets/cards/capacity-${String(i + 1).padStart(2, "0")}.webp`),
     ratio: "1 / 1",
     links: {
-      9: [{ label: "이 페이지에서 발표자료 보기", action: "filter:slides" }]
+      9: [{ label: "이 페이지에서 발표자료 보기", action: "goto:slides" }]
     }
   },
   ...[
