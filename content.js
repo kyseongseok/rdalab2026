@@ -39,7 +39,7 @@ window.PROMOS = [
     title: "연정국 lite — HOT DEBUT",
     desc: "연구정책국 연구제도팀이 준비한 두 번째 티저.",
     src: "assets/video/teaser2.mp4",
-    thumb: "assets/img/teaser2-poster.webp",
+    thumb: "assets/img/teaser2-thumb.webp",
     duration: "0:25",
     releaseAt: "2026-11-02T09:00:00+09:00"
   }
