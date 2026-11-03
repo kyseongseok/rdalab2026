@@ -18,7 +18,7 @@ window.SITE = {
   // 2026 홍보물 칸 수. 공개된 홍보물 + COMING SOON = 이 숫자로 유지된다
   promoSlots: 3,
   // 하트 저장소 (구글 Apps Script 웹앱 주소). 비워두면 이 브라우저에만 저장된다
-  heartApi: ""
+  heartApi: "https://script.google.com/macros/s/AKfycbxuY0T6sF4zxMKGIt_rZ2vmS-qGdOpVIBZ6EDTnmpm37RrUuI5VQ5sGB6RgBbSvDFOU/exec"
 };
 
 /* 메인 히어로 영상 (피드에는 나오지 않음) */

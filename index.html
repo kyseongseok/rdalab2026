@@ -337,8 +337,8 @@ dialog.viewer::backdrop{background:transparent}
     get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
   };
-  const liked = store.get("rdalab.liked", {});
-  let counts = store.get("rdalab.counts", {});
+  const liked = store.get("rdalab.liked.v2", {});
+  let counts = S.heartApi ? {} : store.get("rdalab.counts", {});
   const heartEls = new Map(); // id -> Set of elements
 
   async function loadCounts() {
@@ -361,7 +361,7 @@ dialog.viewer::backdrop{background:transparent}
     if (!!liked[id] === on) return;
     if (on) liked[id] = 1; else delete liked[id];
     counts[id] = countOf(id) + (on ? 1 : -1);
-    store.set("rdalab.liked", liked);
+    store.set("rdalab.liked.v2", liked);
     if (!S.heartApi) store.set("rdalab.counts", counts);
     sendHeart(id, on ? 1 : -1);
     refreshHearts(id, true);
