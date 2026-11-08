@@ -24,7 +24,20 @@ window.SITE = {
 /* 2026 홍보물 — 공개일(releaseAt) 최신순으로 자동 정렬 */
 window.PROMOS = [
   {
+    id: "teaser-04",
+    kind: "video",
+    orient: "portrait",
+    tag: "TEASER 04",
+    title: "협업이 뭔지 보여줄게",
+    desc: "특별출연: 지역연구협력팀장님 · 연구제도팀장님",
+    src: "assets/video/teaser4.mp4",
+    thumb: "assets/img/teaser4-poster.webp",
+    duration: "0:27",
+    releaseAt: "2026-11-08T17:00:00+09:00"
+  },
+  {
     id: "teaser-03",
+    hero: true, // 메인(폰 목업) 고정. 이 줄을 지우면 공개일 최신 영상이 메인으로 올라간다
     kind: "video",
     orient: "portrait",
     tag: "TEASER 03",
@@ -59,7 +72,7 @@ window.PROMOS = [
     duration: "0:52",
     releaseAt: "2026-11-02T08:00:00+09:00"
   }
-  // 새 티저: 맨 위에 한 덩어리 추가. 공개일(releaseAt)이 가장 최신인 영상이 자동으로 메인(폰 목업)에 올라가고,
+  // 새 티저: 맨 위에 한 덩어리 추가. hero: true 가 붙은 영상이 메인(폰 목업)에 고정되고, 없으면 공개일(releaseAt)이 가장 최신인 영상이 메인에 올라가고,
   // 나머지는 TEASERS 섹션에 최신순으로 밀려난다. 공개일을 미래로 적으면 그때까지 COMING SOON 으로 보인다.
 ];
 

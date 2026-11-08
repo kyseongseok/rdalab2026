@@ -309,8 +309,9 @@ dialog.viewer::backdrop{background:transparent}
   const released = window.PROMOS.filter(p => !p.releaseAt || Date.parse(p.releaseAt) <= now)
     .sort((a, b) => Date.parse(b.releaseAt || 0) - Date.parse(a.releaseAt || 0))
     .map(p => ({ ...p, group: "promo" }));
-  const HERO = { ...released[0], poster: released[0].heroPoster || released[0].thumb };
-  const feedPromos = released.slice(1);
+  const heroSrc = released.find(p => p.hero) || released[0];
+  const HERO = { ...heroSrc, poster: heroSrc.heroPoster || heroSrc.thumb };
+  const feedPromos = released.filter(p => p !== heroSrc);
   const $ = (s, r = document) => r.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
