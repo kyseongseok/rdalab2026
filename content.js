@@ -15,22 +15,26 @@ window.SITE = {
     dateLabel: "2026. 12. 8.(화)",
     place: "농촌진흥청 종합연찬관 대강당"
   },
-  // 2026 홍보물 칸 수. 공개된 홍보물 + COMING SOON = 이 숫자로 유지된다
+  // TEASERS 섹션 칸 수(메인 영상 제외). 공개된 티저 + COMING SOON = 이 숫자로 유지된다
   promoSlots: 3,
   // 하트 저장소 (구글 Apps Script 웹앱 주소). 비워두면 이 브라우저에만 저장된다
   heartApi: "https://script.google.com/macros/s/AKfycbxuY0T6sF4zxMKGIt_rZ2vmS-qGdOpVIBZ6EDTnmpm37RrUuI5VQ5sGB6RgBbSvDFOU/exec"
 };
 
-/* 메인 히어로 영상 (피드에는 나오지 않음) */
-window.HERO = {
-  id: "teaser-01",
-  label: "TEASER 01",
-  src: "assets/video/teaser1.mp4?v=11",
-  poster: "assets/img/teaser1-poster.webp?v=11"
-};
-
 /* 2026 홍보물 — 공개일(releaseAt) 최신순으로 자동 정렬 */
 window.PROMOS = [
+  {
+    id: "teaser-03",
+    kind: "video",
+    orient: "portrait",
+    tag: "TEASER 03",
+    title: "협업 좀 하랬더니",
+    desc: "국장님·과장님의 초상권을 고려해, 제도팀 직원의 강아지가 대신 출연했습니다.",
+    src: "assets/video/teaser3.mp4",
+    thumb: "assets/img/teaser3-poster.webp",
+    duration: "1:19",
+    releaseAt: "2026-11-08T15:00:00+09:00"
+  },
   {
     id: "teaser-02",
     kind: "video",
@@ -42,10 +46,21 @@ window.PROMOS = [
     thumb: "assets/img/teaser2-thumb.webp",
     duration: "0:25",
     releaseAt: "2026-11-02T09:00:00+09:00"
+  },
+  {
+    id: "teaser-01",
+    kind: "video",
+    orient: "portrait",
+    tag: "TEASER 01",
+    title: "엄청난 놈이 온다",
+    desc: "RDA LAB 첫 번째 티저. 2026 RDA혁신연구실 콘테스트의 역대급 포상을 예고합니다.",
+    src: "assets/video/teaser1.mp4?v=11",
+    thumb: "assets/img/teaser1-poster.webp?v=11",
+    duration: "0:52",
+    releaseAt: "2026-11-02T08:00:00+09:00"
   }
-  // 예시) 다음 티저를 미리 올려두고 공개일을 정해두면, 그 전까지는 날짜가 붙은 COMING SOON 으로 보인다
-  // { id:"teaser-03", kind:"video", orient:"portrait", tag:"TEASER 03", title:"…", src:"assets/video/teaser3.mp4",
-  //   thumb:"assets/img/teaser3-poster.webp", duration:"0:30", releaseAt:"2026-11-17T09:00:00+09:00" }
+  // 새 티저: 맨 위에 한 덩어리 추가. 공개일(releaseAt)이 가장 최신인 영상이 자동으로 메인(폰 목업)에 올라가고,
+  // 나머지는 TEASERS 섹션에 최신순으로 밀려난다. 공개일을 미래로 적으면 그때까지 COMING SOON 으로 보인다.
 ];
 
 /* 2025 아카이브 — 적힌 순서대로 고정 */

@@ -264,7 +264,7 @@ dialog.viewer::backdrop{background:transparent}
     </div>
 
     <div class="info">
-      <div class="eyebrow"><i aria-hidden="true"></i>TEASER 01 — NOW SHOWING</div>
+      <div class="eyebrow"><i aria-hidden="true"></i><span id="heroTag">TEASER</span> — NOW SHOWING</div>
       <h1><span class="yr">2026</span>RDA혁신연구실 콘테스트</h1>
       <dl class="facts">
         <dt>DATE</dt><dd id="fDate"></dd>
@@ -304,7 +304,13 @@ dialog.viewer::backdrop{background:transparent}
 <script src="content.js"></script>
 <script>
 (() => {
-  const S = window.SITE, HERO = window.HERO;
+  const S = window.SITE;
+  const now = Date.now();
+  const released = window.PROMOS.filter(p => !p.releaseAt || Date.parse(p.releaseAt) <= now)
+    .sort((a, b) => Date.parse(b.releaseAt || 0) - Date.parse(a.releaseAt || 0))
+    .map(p => ({ ...p, group: "promo" }));
+  const HERO = { ...released[0], poster: released[0].heroPoster || released[0].thumb };
+  const feedPromos = released.slice(1);
   const $ = (s, r = document) => r.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
@@ -394,7 +400,7 @@ dialog.viewer::backdrop{background:transparent}
 
   /* ---------- hero ---------- */
   const hv = $("#heroVideo");
-  hv.src = HERO.src; hv.poster = HERO.poster;
+  hv.src = HERO.src; hv.poster = HERO.poster; $("#heroTag").textContent = HERO.tag;
   $("#heroLike").appendChild(heartBtn(HERO.id));
   let heroWanted = true, clickT;
   const PAUSE_D = "M6 4h4v16H6zM14 4h4v16h-4z", PLAY_D = "M7 4.5v15l12.5-7.5z";
@@ -449,19 +455,15 @@ dialog.viewer::backdrop{background:transparent}
   tick(); setInterval(tick, 1000);
 
   /* ---------- feed ---------- */
-  const now = Date.now();
-  const released = window.PROMOS.filter(p => !p.releaseAt || Date.parse(p.releaseAt) <= now)
-    .sort((a, b) => Date.parse(b.releaseAt || 0) - Date.parse(a.releaseAt || 0))
-    .map(p => ({ ...p, group: "promo" }));
   const upcoming = window.PROMOS.filter(p => p.releaseAt && Date.parse(p.releaseAt) > now)
     .sort((a, b) => Date.parse(a.releaseAt) - Date.parse(b.releaseAt));
-  const soonCount = Math.max(0, S.promoSlots - released.length);
+  const soonCount = Math.max(0, S.promoSlots - feedPromos.length);
   const soon = Array.from({ length: soonCount }, (_, i) => ({ soon: true, group: "promo", at: upcoming[i]?.releaseAt }));
   const ITEMS = [...released, ...soon, ...window.ARCHIVE];
   const byId = Object.fromEntries(ITEMS.filter(i => i.id).map(i => [i.id, i]));
 
   const SECTIONS = [
-    { id: "teasers", no: "01", en: "TEASERS", ko: "티저", desc: "새 티저는 맨 앞에 차례로 공개됩니다.", items: [...released, ...soon] },
+    { id: "teasers", no: "01", en: "TEASERS", ko: "티저", desc: "새 티저는 맨 앞에 차례로 공개됩니다.", items: [...feedPromos, ...soon] },
     { id: "rewards", no: "02", en: "REWARDS", ko: "포상후기", desc: "2025 수상 연구실이 받은 포상, 이렇게 썼습니다.", items: window.ARCHIVE.filter(i => i.group === "award") },
     { id: "cases", no: "03", en: "BEST PRACTICES", ko: "2025 우수사례", desc: "키워드로 보는 RDA혁신연구실 — 콘테스트 진출 연구실의 운영 사례.", items: window.ARCHIVE.filter(i => i.group === "case") },
     { id: "slides", no: "04", en: "PRESENTATIONS", ko: "2025 수상팀 발표자료", desc: "본선 발표자료를 넘겨보고 PDF로 내려받을 수 있습니다.", items: window.ARCHIVE.filter(i => i.group === "slides") }
