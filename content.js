@@ -16,7 +16,7 @@ window.SITE = {
     place: "농촌진흥청 종합연찬관 대강당"
   },
   // TEASERS 섹션 칸 수(메인 영상 제외). 공개된 티저 + COMING SOON = 이 숫자로 유지된다
-  promoSlots: 3,
+  promoSlots: 6,
   // 하트 저장소 (구글 Apps Script 웹앱 주소). 비워두면 이 브라우저에만 저장된다
   heartApi: "https://script.google.com/macros/s/AKfycbxuY0T6sF4zxMKGIt_rZ2vmS-qGdOpVIBZ6EDTnmpm37RrUuI5VQ5sGB6RgBbSvDFOU/exec"
 };
