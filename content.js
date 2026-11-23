@@ -24,6 +24,31 @@ window.SITE = {
 /* 2026 홍보물 — 공개일(releaseAt) 최신순으로 자동 정렬 */
 window.PROMOS = [
   {
+    id: "food-cabbage",
+    hero: true, // 메인(폰 목업) 고정. 이 줄을 지우면 공개일 최신 영상이 메인으로 올라간다
+    kind: "video",
+    orient: "portrait",
+    tag: "국립식량과학원 · 고랭지배추연구실",
+    title: "진짜 현장직무교육이 궁금하다면",
+    desc: "고령지농업연구소 고랭지배추연구실 이영규 연구관 출연. 나와 함께 현장 전문가가 되는 무술, 12월 8일 대강당에서 공개합니다.",
+    src: "assets/video/food-cabbage.mp4",
+    thumb: "assets/img/food-cabbage-poster.webp",
+    duration: "0:43",
+    releaseAt: "2026-11-23T20:00:00+09:00"
+  },
+  {
+    id: "food-carbon",
+    kind: "video",
+    orient: "portrait",
+    tag: "국립식량과학원 · 탄소중립작물재배연구실",
+    title: "ACT리더십과 쌍두레 연구가 궁금하다면",
+    desc: "재배생리과 탄소중립작물재배연구실. ACT리더십과 쌍두레 연구 공동담당 운영제의 이야기를 12월 8일 대강당에서 만나보세요.",
+    src: "assets/video/food-carbon.mp4",
+    thumb: "assets/img/food-carbon-poster.webp",
+    duration: "0:35",
+    releaseAt: "2026-11-23T19:55:00+09:00"
+  },
+  {
     id: "teaser-04",
     kind: "video",
     orient: "portrait",
@@ -37,7 +62,6 @@ window.PROMOS = [
   },
   {
     id: "teaser-03",
-    hero: true, // 메인(폰 목업) 고정. 이 줄을 지우면 공개일 최신 영상이 메인으로 올라간다
     kind: "video",
     orient: "portrait",
     tag: "TEASER 03",
