@@ -42,7 +42,7 @@ window.PROMOS = [
     orient: "portrait",
     tag: "국립식량과학원 · 탄소중립작물재배연구실",
     title: "ACT리더십과 쌍두레 연구가 궁금하다면",
-    desc: "재배생리과 탄소중립작물재배연구실. ACT리더십과 쌍두레 연구 공동담당 운영제의 이야기를 12월 8일 대강당에서 만나보세요.",
+    desc: "재배생리과 탄소중립작물재배연구실. ACT리더십과 쌍두레 운영제도를 알고 싶다면 12월 8일 대강당으로 오세요",
     src: "assets/video/food-carbon.mp4",
     thumb: "assets/img/food-carbon-poster.webp",
     duration: "0:35",
