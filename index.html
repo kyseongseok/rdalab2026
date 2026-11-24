@@ -458,7 +458,10 @@ dialog.viewer::backdrop{background:transparent}
   /* ---------- feed ---------- */
   const upcoming = window.PROMOS.filter(p => p.releaseAt && Date.parse(p.releaseAt) > now)
     .sort((a, b) => Date.parse(a.releaseAt) - Date.parse(b.releaseAt));
-  const soonCount = Math.max(0, S.promoSlots - feedPromos.length);
+  // 남은 예정 편수(teasersLeft)가 있으면 COMING SOON 으로 마지막 줄을 채운다(줄이 꽉 차 있으면 한 줄 새로 연다).
+  const left = Math.max(0, (S.teasersLeft ?? 0) - upcoming.length) + upcoming.length;
+  const rowFill = (3 - (feedPromos.length % 3)) % 3;
+  const soonCount = left > 0 ? Math.min(left, rowFill || 3) : 0;
   const soon = Array.from({ length: soonCount }, (_, i) => ({ soon: true, group: "promo", at: upcoming[i]?.releaseAt }));
   const ITEMS = [...released, ...soon, ...window.ARCHIVE];
   const byId = Object.fromEntries(ITEMS.filter(i => i.id).map(i => [i.id, i]));

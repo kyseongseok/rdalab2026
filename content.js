@@ -15,14 +15,38 @@ window.SITE = {
     dateLabel: "2026. 12. 8.(화)",
     place: "농촌진흥청 종합연찬관 대강당"
   },
-  // TEASERS 섹션 칸 수(메인 영상 제외). 공개된 티저 + COMING SOON = 이 숫자로 유지된다
-  promoSlots: 6,
+  // 앞으로 더 올릴 티저 편수. 남은 편수만큼 COMING SOON 칸이 마지막 줄을 채운다. 영상을 하나 올릴 때마다 1씩 줄인다
+  teasersLeft: 5,
   // 하트 저장소 (구글 Apps Script 웹앱 주소). 비워두면 이 브라우저에만 저장된다
   heartApi: "https://script.google.com/macros/s/AKfycbxuY0T6sF4zxMKGIt_rZ2vmS-qGdOpVIBZ6EDTnmpm37RrUuI5VQ5sGB6RgBbSvDFOU/exec"
 };
 
 /* 2026 홍보물 — 공개일(releaseAt) 최신순으로 자동 정렬 */
 window.PROMOS = [
+  {
+    id: "hort-vegetable",
+    kind: "video",
+    orient: "portrait",
+    tag: "국립원예특작과학원 · 채소생리기작연구실",
+    title: "상위1% 연구실 & ONE-TEAM 만들기 프로젝트가 궁금하다면",
+    desc: "채소기초기반과 채소생리기작연구실 박미희 연구관 출연. 상위1% 연구실 & ONE-TEAM 만들기 프로젝트가 궁금하다면 12월 8일 대강당으로 오세요",
+    src: "assets/video/hort-vegetable.mp4",
+    thumb: "assets/img/hort-vegetable-poster.webp",
+    duration: "0:25",
+    releaseAt: "2026-11-24T18:55:00+09:00"
+  },
+  {
+    id: "hort-medicinal",
+    kind: "video",
+    orient: "portrait",
+    tag: "국립원예특작과학원 · 약용작물육종연구실",
+    title: "1품종-1산업화 협업체계가 궁금하다면",
+    desc: "특용작물육종과 약용작물육종연구실. 작목별 담당자 지정 운영방식과 1품종-1산업화 협업체계가 궁금하다면 12월 8일 대강당으로 오세요",
+    src: "assets/video/hort-medicinal.mp4",
+    thumb: "assets/img/hort-medicinal-poster.webp",
+    duration: "0:23",
+    releaseAt: "2026-11-24T18:50:00+09:00"
+  },
   {
     id: "food-cabbage",
     hero: true, // 메인(폰 목업) 고정. 이 줄을 지우면 공개일 최신 영상이 메인으로 올라간다
