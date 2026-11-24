@@ -49,7 +49,6 @@ window.PROMOS = [
   },
   {
     id: "food-cabbage",
-    hero: true, // 메인(폰 목업) 고정. 이 줄을 지우면 공개일 최신 영상이 메인으로 올라간다
     kind: "video",
     orient: "portrait",
     tag: "국립식량과학원 · 고랭지배추연구실",
@@ -110,6 +109,7 @@ window.PROMOS = [
   },
   {
     id: "teaser-01",
+    hero: true, // 메인(폰 목업) 고정
     kind: "video",
     orient: "portrait",
     tag: "TEASER 01",
@@ -120,8 +120,9 @@ window.PROMOS = [
     duration: "0:52",
     releaseAt: "2026-11-02T08:00:00+09:00"
   }
-  // 새 티저: 맨 위에 한 덩어리 추가. hero: true 가 붙은 영상이 메인(폰 목업)에 고정되고, 없으면 공개일(releaseAt)이 가장 최신인 영상이 메인에 올라가고,
-  // 나머지는 TEASERS 섹션에 최신순으로 밀려난다. 공개일을 미래로 적으면 그때까지 COMING SOON 으로 보인다.
+  // 새 티저: 아무 위치에 한 덩어리 추가하고 releaseAt(공개 일시)을 적는다. 격자에는 공개 순서대로(먼저 올린 것이 앞) 들어가고,
+  // 메인(폰 목업)은 hero: true 가 붙은 영상(티저 01)으로 고정. 공개일을 미래로 적으면 그때까지 COMING SOON 으로 보인다.
+  // 올릴 때마다 SITE.teasersLeft 를 1씩 줄인다.
 ];
 
 /* 2025 아카이브 — 적힌 순서대로 고정 */
