@@ -311,8 +311,8 @@ dialog.viewer::backdrop{background:transparent}
     .map(p => ({ ...p, group: "promo" }));
   const heroSrc = released.find(p => p.hero) || released[0];
   const HERO = { ...heroSrc, poster: heroSrc.heroPoster || heroSrc.thumb };
-  // 격자는 업로드(공개) 순서대로: 먼저 올린 영상이 앞, 새 영상은 뒤에 이어 붙는다
-  const feedPromos = released.filter(p => p !== heroSrc).sort((a, b) => Date.parse(a.releaseAt || 0) - Date.parse(b.releaseAt || 0));
+  // 격자는 최신순: 가장 최근에 올린 영상이 맨 앞, 오래된 영상일수록 뒤로 밀린다
+  const feedPromos = released.filter(p => p !== heroSrc).sort((a, b) => Date.parse(b.releaseAt || 0) - Date.parse(a.releaseAt || 0));
   const $ = (s, r = document) => r.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
@@ -468,7 +468,7 @@ dialog.viewer::backdrop{background:transparent}
   const byId = Object.fromEntries(ITEMS.filter(i => i.id).map(i => [i.id, i]));
 
   const SECTIONS = [
-    { id: "teasers", no: "01", en: "TEASERS", ko: "티저", desc: "공개된 순서대로 이어집니다. 새 티저는 COMING SOON 자리에 차례로 공개됩니다.", items: [...feedPromos, ...soon] },
+    { id: "teasers", no: "01", en: "TEASERS", ko: "티저", desc: "새 티저는 맨 앞에 차례로 공개됩니다.", items: [...feedPromos, ...soon] },
     { id: "rewards", no: "02", en: "REWARDS", ko: "포상후기", desc: "2025 수상 연구실이 받은 포상, 이렇게 썼습니다.", items: window.ARCHIVE.filter(i => i.group === "award") },
     { id: "cases", no: "03", en: "BEST PRACTICES", ko: "2025 우수사례", desc: "키워드로 보는 RDA혁신연구실 — 콘테스트 진출 연구실의 운영 사례.", items: window.ARCHIVE.filter(i => i.group === "case") },
     { id: "slides", no: "04", en: "PRESENTATIONS", ko: "2025 수상팀 발표자료", desc: "본선 발표자료를 넘겨보고 PDF로 내려받을 수 있습니다.", items: window.ARCHIVE.filter(i => i.group === "slides") }
