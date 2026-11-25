@@ -16,13 +16,37 @@ window.SITE = {
     place: "농촌진흥청 종합연찬관 대강당"
   },
   // 앞으로 더 올릴 티저 편수. 남은 편수만큼 COMING SOON 칸이 마지막 줄을 채운다. 영상을 하나 올릴 때마다 1씩 줄인다
-  teasersLeft: 5,
+  teasersLeft: 3,
   // 하트 저장소 (구글 Apps Script 웹앱 주소). 비워두면 이 브라우저에만 저장된다
   heartApi: "https://script.google.com/macros/s/AKfycbxuY0T6sF4zxMKGIt_rZ2vmS-qGdOpVIBZ6EDTnmpm37RrUuI5VQ5sGB6RgBbSvDFOU/exec"
 };
 
 /* 2026 홍보물 — 공개일(releaseAt) 최신순으로 자동 정렬 */
 window.PROMOS = [
+  {
+    id: "ani-smartbarn",
+    kind: "video",
+    orient: "portrait",
+    tag: "국립축산과학원 · 스마트축사연구실",
+    title: "도제식 역량강화 & AI워킹그룹이 궁금하다면",
+    desc: "스마트축산환경과 스마트축사연구실 김종복 연구관 출연. #도제식역량강화 #AI워킹그룹이 궁금하다면 12월 8일 대강당으로 오세요",
+    src: "assets/video/ani-smartbarn.mp4",
+    thumb: "assets/img/ani-smartbarn-poster.webp",
+    duration: "0:30",
+    releaseAt: "2026-11-25T21:10:00+09:00"
+  },
+  {
+    id: "ani-feed",
+    kind: "video",
+    orient: "portrait",
+    tag: "국립축산과학원 · 사료자원화연구실",
+    title: "오픈포럼 & 과제별 협업팀 운영이 궁금하다면",
+    desc: "가축정밀영양과 사료자원화연구실 강환구 연구관 출연. #오픈포럼 #과제별협업팀운영이 궁금하다면 12월 8일 대강당으로 오세요",
+    src: "assets/video/ani-feed.mp4",
+    thumb: "assets/img/ani-feed-poster.webp",
+    duration: "0:27",
+    releaseAt: "2026-11-25T21:05:00+09:00"
+  },
   {
     id: "hort-vegetable",
     kind: "video",
