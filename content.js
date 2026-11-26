@@ -16,13 +16,37 @@ window.SITE = {
     place: "농촌진흥청 종합연찬관 대강당"
   },
   // 앞으로 더 올릴 티저 편수. 남은 편수만큼 COMING SOON 칸이 마지막 줄을 채운다. 영상을 하나 올릴 때마다 1씩 줄인다
-  teasersLeft: 3,
+  teasersLeft: 1,
   // 하트 저장소 (구글 Apps Script 웹앱 주소). 비워두면 이 브라우저에만 저장된다
   heartApi: "https://script.google.com/macros/s/AKfycbxuY0T6sF4zxMKGIt_rZ2vmS-qGdOpVIBZ6EDTnmpm37RrUuI5VQ5sGB6RgBbSvDFOU/exec"
 };
 
 /* 2026 홍보물 — 공개일(releaseAt) 최신순으로 자동 정렬 */
 window.PROMOS = [
+  {
+    id: "nas-agmet",
+    kind: "video",
+    orient: "portrait",
+    tag: "국립농업과학원 · 농업기상연구실",
+    title: "융복합 인력양성 & 전략목표서가 궁금하다면",
+    desc: "기후변화대응과 농업기상연구실 심교문 연구관 출연. #융복합인력양성 #전략목표서가 궁금하다면 12월 8일 대강당으로 오세요",
+    src: "assets/video/nas-agmet.mp4",
+    thumb: "assets/img/nas-agmet-poster.webp",
+    duration: "0:41",
+    releaseAt: "2026-11-26T17:05:00+09:00"
+  },
+  {
+    id: "nas-omics-satellite",
+    kind: "video",
+    orient: "portrait",
+    tag: "국립농업과학원 · 오믹스융합기술연구실 × 위성분석활용연구실",
+    title: "1인1장치 전문가 & 100일 발표가 궁금하다면",
+    desc: "디지털육종지원과 오믹스융합기술연구실 백정호 연구관, 농업위성센터 위성분석활용연구실 이경도 연구관 출연. 오믹스융합기술연구실의 #1인1장치전문가 #연구시설운영전문가, 위성분석활용연구실의 #100일발표 #업무일지가 궁금하다면 12월 8일 대강당으로 오세요",
+    src: "assets/video/nas-omics-satellite.mp4",
+    thumb: "assets/img/nas-omics-satellite-poster.webp",
+    duration: "0:42",
+    releaseAt: "2026-11-26T17:00:00+09:00"
+  },
   {
     id: "ani-smartbarn",
     kind: "video",
