@@ -32,6 +32,7 @@ window.PROMOS = [
     desc: "기후변화대응과 농업기상연구실 심교문 연구관 출연. #융복합인력양성 #전략목표서가 궁금하다면 12월 8일 대강당으로 오세요",
     src: "assets/video/nas-agmet.mp4",
     thumb: "assets/img/nas-agmet-poster.webp",
+    thumbPos: "50% 12%", // 썸네일 자르는 위치(가로% 세로%). 세로% 를 낮출수록 위쪽(머리)이 보인다
     duration: "0:41",
     releaseAt: "2026-11-26T17:05:00+09:00"
   },
@@ -56,6 +57,7 @@ window.PROMOS = [
     desc: "스마트축산환경과 스마트축사연구실 김종복 연구관 출연. #도제식역량강화 #AI워킹그룹이 궁금하다면 12월 8일 대강당으로 오세요",
     src: "assets/video/ani-smartbarn.mp4",
     thumb: "assets/img/ani-smartbarn-poster.webp",
+    thumbPos: "50% 8%",
     duration: "0:30",
     releaseAt: "2026-11-25T21:10:00+09:00"
   },

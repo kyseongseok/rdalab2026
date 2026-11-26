@@ -492,7 +492,7 @@ dialog.viewer::backdrop{background:transparent}
     if (it.kind === "slides") {
       btn.innerHTML = `<div class="doc-in"><span class="k">PRESENTATION · ${it.pages.length}P</span><img src="${it.pages[0]}" alt="" loading="lazy"><span class="n">${esc(it.lab)}<small>${esc(it.org)} · 2025 본선 발표</small></span></div>${hover}`;
     } else {
-      const pos = it.kind === "poster" ? "object-position:top" : "";
+      const pos = it.thumbPos ? `object-position:${it.thumbPos}` : it.kind === "poster" ? "object-position:top" : "";
       let extra = "";
       if (it.thumbStyle === "floor") extra = `<div class="floor-label"><small>2025 최우수 · ${esc(it.prize)}</small><strong>${esc(it.lab)}</strong></div>`;
       btn.innerHTML = `<img class="cover" src="${it.thumb || it.pages[0]}" alt="" loading="lazy" style="${pos}">${extra}
